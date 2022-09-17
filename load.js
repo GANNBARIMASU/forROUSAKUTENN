@@ -10,11 +10,14 @@ loadScene.preload = function() {
     this.load.image('background01', 'assets/images/background01.jpg');
     this.load.image('background02', 'assets/images/background02.jpg');
     this.load.image('background03', 'assets/images/background03.jpg');
+    this.load.image('background04', 'assets/images/23976036_m.jpg');
+    this.load.image('background05', 'assets/images/23043274.jpg');
     // プレイヤースプライト
     this.load.spritesheet('player', 'assets/images/jets.png', { frameWidth: 64, frameHeight: 64 });
     // ビーム
     this.load.image('beam01', 'assets/images/beam01.png');
     this.load.image('beam02', 'assets/images/beam02.png');
+    this.load.image('beam03', 'assets/images/865576.png');
     // パーティクル用画像
     this.load.image('fire01', 'assets/images/fire01.png');
     this.load.image('fire02', 'assets/images/fire02.png');
@@ -24,6 +27,7 @@ loadScene.preload = function() {
     this.load.image('enemy03', 'assets/images/enemy03.png');
     this.load.image('enemy04', 'assets/images/enemy04.png');
     this.load.image('enemy05', 'assets/images/enemy05.png');
+    this.load.image('enemy06', 'assets/images/22978203.png');
 };
 
 loadScene.create = function() {

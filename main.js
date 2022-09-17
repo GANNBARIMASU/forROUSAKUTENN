@@ -8,7 +8,7 @@ mainScene.create = function () {
     this.cameras.main.setBackgroundColor('#99CCFF');
     
     // 背景のタイルスプライトを設定
-    this.background = this.add.tileSprite(0,0,800,600,'background02');
+    this.background = this.add.tileSprite(0,0,1920,1280,'background01');
     this.background.setOrigin(0,0);
     
     // プレイヤー作成
@@ -190,10 +190,10 @@ mainScene.hitBeam = function( beam, enemy) {
     //敵のパーティクル実行
     enemy.emitter.start();
     //スコアアップ
-    this.score += 10;
+    this.score += 5;
     this.scoreText.setText('スコア:' + this.score);
 
-    if(this.score >= 100) {
+    if(this.score >= 50) {
         this.scene.start("subScene", {});
     }
 };

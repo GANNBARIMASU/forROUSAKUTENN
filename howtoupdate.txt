@@ -1,0 +1,22 @@
+githubに情報を更新させる方法
+
+
+1) bashを立ち上げる
+
+  メニューのWindows から、New Terminal　を選んでもOK
+
+2) 場所を移動します
+開いたbashに以下の2行を打ち込む
+
+cd forROUSAKUTENN
+
+cd 03-shooting
+
+3) さらに以下を入力
+
+
+git add .      # ⇒ドットを忘れないこと！
+git commit -m "メッセージ"   
+
+
+
