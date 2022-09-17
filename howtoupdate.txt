@@ -17,6 +17,7 @@ cd 03-shooting
 
 git add .      # ⇒ドットを忘れないこと！
 git commit -m "メッセージ"   
+git push
 
 
 

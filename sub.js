@@ -22,6 +22,8 @@ subScene.create = function () {
     this.createUI();
     //パーティクル作成
     this.createParticle();
+    //ボスパーティクル作成
+    this.createBossEnemyParticle();
     this.physics.add.overlap(this.PlayerbeamGroup, this.BossEnemy, this.hitBossEnemy, null,this);
     this.physics.add.overlap(this.BossbeamGroup,this.player,this.hitPlayerBeam,null,this);
     
@@ -118,12 +120,16 @@ subScene.hitBossEnemy = function(BossEnemy,beam) {
     //ボス敵のHP減少
     this.BossEnemyHP -= 10;
     //ボスのHPが0になったら
-    if( this.BossEnemyHP == 0 ) {
+    if( this.BossEnemyHP <= 0 ) {
         if(this.isCongratulations) {
             return;
         }
         //ゴールにする
         this.isCongratulations = true;
+        //パーティクル開始
+        this.BossEnemy.emitter.start();
+        //ボスを非表示
+        this.BossEnemy.setVisible(false);
         //プレイヤーを非表示
         this.player.setVisible(false);
         //ゴール画面を1秒後に表示
@@ -162,7 +168,7 @@ subScene.hitPlayerBeam = function(player,beam) {
     this.hpText.text = 'hp:' + this.hp;
     
     //HPが0になったら
-    if( this.hp == 0 ) {
+    if( this.hp <= 0 ) {
         if(this.isGameOver) {
             return;
         }
@@ -239,7 +245,7 @@ subScene.gameOver = function() {
     },this);
 };
 subScene.Congratulations = function() {
-    this.Congratulations = this.add.image(400,300,'You win');
+    this.Congratulations = this.add.image(400,300,'gameclear');
     this.Congratulations.setDisplaySize(500,500);
     //何かのキーをクリックするとスタートシーンを開始
     this.input.keyboard.on('keydown',function(event) {
