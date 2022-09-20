@@ -103,7 +103,7 @@ mainScene.createEnemyGroup = function() {
     this.physics.add.overlap(this.player, this.enemyGroup, this.hitEnemy, null,this);
     
     this.time.addEvent({
-        delay: 200,
+        delay: 500,
         callback: this.createEnemy,
         loop: true,
         callbackScope: this,
@@ -235,7 +235,7 @@ mainScene.createEnemyParticle = function(enemy) {
     //敵の爆発パーティクル作成
     var particles = this.add.particles('fire02');
     enemy.emitter = particles.createEmitter({
-        speed: 200,
+        speed: 300,
         maxParticles: 10,
         blendMode: 'ADD',
         follow: enemy,

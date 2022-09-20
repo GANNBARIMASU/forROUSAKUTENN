@@ -97,7 +97,7 @@ subScene.createBossEnemy = function() {
     //初期位置
     this.BossEnemy.setDisplaySize(200,200);
     this.timeEvent = this.time.addEvent({
-        delay: 400,
+        delay: 300,
         callback: this.createBossBeam,
         loop: true,
         callbackScope: this,
