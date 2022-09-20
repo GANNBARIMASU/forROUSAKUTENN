@@ -38,7 +38,7 @@ mainScene.update = function() {
 
 mainScene.config = function () {
     // プレイヤーの速度
-    this.speed = 300;
+    this.speed = 400;
     // スコア
     this.score = 0;
     //プレイヤーのhp
@@ -103,7 +103,7 @@ mainScene.createEnemyGroup = function() {
     this.physics.add.overlap(this.player, this.enemyGroup, this.hitEnemy, null,this);
     
     this.time.addEvent({
-        delay: 250,
+        delay: 200,
         callback: this.createEnemy,
         loop: true,
         callbackScope: this,
@@ -168,7 +168,7 @@ mainScene.shoot = function() {
     //ビーム作成
     var beam = this.beamGroup.create(posX,posY,'beam01');
     //ビームの速度設定
-    beam.setVelocityY(-200);
+    beam.setVelocityY(-400);
 };
 
 mainScene.hitBeam = function( beam, enemy) {

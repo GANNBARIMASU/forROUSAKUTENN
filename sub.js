@@ -36,7 +36,7 @@ subScene.update = function() {
 };
 subScene.config = function () {
     //プレイヤーの速度
-    this.speed = 150;
+    this.speed = 400;
     //スコア
     this.score = 50;
     //敵タイプ
@@ -97,7 +97,7 @@ subScene.createBossEnemy = function() {
     //初期位置
     this.BossEnemy.setDisplaySize(200,200);
     this.timeEvent = this.time.addEvent({
-        delay: 200,
+        delay: 400,
         callback: this.createBossBeam,
         loop: true,
         callbackScope: this,
@@ -110,14 +110,14 @@ subScene.createBossBeam = function() {
     //ビーム作成
     var beam = this.BossbeamGroup.create(posX,posY,'beam01');
     //ビームの速度設定
-    beam.setVelocityY(200);
+    beam.setVelocityY(400);
     console.log(beam);
 };
 subScene.hitBossEnemy = function(BossEnemy,beam) {
     //ビームの消滅
     beam.destroy();
     //ボス敵のHP減少
-    this.BossEnemyHP -= 10;
+    this.BossEnemyHP -= 5;
     //ボスのHPが0になったら
     if( this.BossEnemyHP <= 0 ) {
         if(this.isCongratulations) {
@@ -155,7 +155,7 @@ subScene.shoot = function() {
     //ビーム作成
     var beam = this.PlayerbeamGroup.create(posX,posY,'beam01');
     //ビームの速度設定
-    beam.setVelocityY(-200);
+    beam.setVelocityY(-400);
 };
 subScene.hitPlayerBeam = function(player,beam) {
     //ビームの消滅
@@ -226,7 +226,7 @@ subScene.createBossEnemyParticle = function() {
     //敵の爆発パーティクル作成
     var particles = this.add.particles('fire02');
     this.BossEnemy.emitter = particles.createEmitter({
-        speed: 100,
+        speed: 200,
         maxParticles: 10,
         blendMode: 'ADD',
         follow: this.BossEnemy,
