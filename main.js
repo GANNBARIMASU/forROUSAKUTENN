@@ -235,7 +235,7 @@ mainScene.createEnemyParticle = function(enemy) {
     //敵の爆発パーティクル作成
     var particles = this.add.particles('fire02');
     enemy.emitter = particles.createEmitter({
-        speed: 300,
+        speed: 100,
         maxParticles: 10,
         blendMode: 'ADD',
         follow: enemy,
