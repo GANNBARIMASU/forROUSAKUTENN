@@ -97,7 +97,7 @@ subScene.createBossEnemy = function() {
     //初期位置
     this.BossEnemy.setDisplaySize(200,200);
     this.timeEvent = this.time.addEvent({
-        delay: 500,
+        delay: 200,
         callback: this.createBossBeam,
         loop: true,
         callbackScope: this,
@@ -110,7 +110,7 @@ subScene.createBossBeam = function() {
     //ビーム作成
     var beam = this.BossbeamGroup.create(posX,posY,'beam01');
     //ビームの速度設定
-    beam.setVelocityY(100);
+    beam.setVelocityY(200);
     console.log(beam);
 };
 subScene.hitBossEnemy = function(BossEnemy,beam) {
@@ -155,7 +155,7 @@ subScene.shoot = function() {
     //ビーム作成
     var beam = this.PlayerbeamGroup.create(posX,posY,'beam01');
     //ビームの速度設定
-    beam.setVelocityY(-100);
+    beam.setVelocityY(-200);
 };
 subScene.hitPlayerBeam = function(player,beam) {
     //ビームの消滅
