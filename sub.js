@@ -78,7 +78,6 @@ subScene.movePlayer = function() {
     }
     if(cursors.left.isDown) {
         //左に移動
-        // 今、zoom接続できますか？いつものところ
         this.player.setVelocityX(-this.speed);
         //左向きのフレーム
         this.player.setFrame(0);
@@ -98,7 +97,7 @@ subScene.createBossEnemy = function() {
     //初期位置
     this.BossEnemy.setDisplaySize(200,200);
     this.timeEvent = this.time.addEvent({
-        delay: 2000,
+        delay: 500,
         callback: this.createBossBeam,
         loop: true,
         callbackScope: this,

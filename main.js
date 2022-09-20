@@ -99,7 +99,7 @@ mainScene.movePlayer = function() {
 mainScene.createEnemyGroup = function() {
     // 敵グループの作成
     this.enemyGroup = this.physics.add.group();
-    //敵とプレイやの衝突
+    //敵とプレイヤーの衝突
     this.physics.add.overlap(this.player, this.enemyGroup, this.hitEnemy, null,this);
     
     this.time.addEvent({
@@ -127,7 +127,7 @@ mainScene.createEnemy = function() {
     this.createEnemyParticle(enemy);
 };
 mainScene.hitEnemy = function (player, enemy) {
-    // プレイヤと敵が衝突
+    // プレイヤーと敵が衝突
     
     if(!this.isGameOver) {
         //hp減少
@@ -152,18 +152,7 @@ mainScene.hitEnemy = function (player, enemy) {
             callbackScope: this,
         });
     }
-    // //ゲームオーバーにする
-    // this.isGameOver = true;
-    // //パーティクル開始
-    // this.emitter.start();
-    // //プレイヤーを非表示
-    // this.player.setVisible(false);
-    // //ゲームオーバー画面を1秒後に表示
-    // this.time.addEvent({
-    //     delay: 1000,
-    //     callback: this.gameOver,
-    //     callbackScope: this,
-    // });
+    
 };
 
 mainScene.createBeamGroup = function() {
@@ -193,7 +182,7 @@ mainScene.hitBeam = function( beam, enemy) {
     this.score += 5;
     this.scoreText.setText('スコア:' + this.score);
 
-    if(this.score >= 50) {
+    if(this.score >= 100) {
         this.scene.start("subScene", {});
     }
 };
