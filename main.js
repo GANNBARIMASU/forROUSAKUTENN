@@ -103,7 +103,7 @@ mainScene.createEnemyGroup = function() {
     this.physics.add.overlap(this.player, this.enemyGroup, this.hitEnemy, null,this);
     
     this.time.addEvent({
-        delay: 500,
+        delay: 400,
         callback: this.createEnemy,
         loop: true,
         callbackScope: this,
